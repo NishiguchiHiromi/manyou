@@ -1,0 +1,22 @@
+  <div>
+    <table>
+      <tr>
+        <td><%= f.label :title, t('.title') %></td>
+        <td><%= f.text_field :title  %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :text, t('.text') %></td>
+        <td><%= f.text_area :text  , class: "text-area"%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :status, t('.status') %></td>
+        <td><%= f.select :status, Task.statuses.keys%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :deadline, t('.deadline') %></td>
+        <td>
+          <%= f.datetime_select :deadline, {}, class: 'form-control' %>
+        </td>
+      </tr>
+    </table>
+  </div>
