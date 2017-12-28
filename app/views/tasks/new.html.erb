@@ -1,13 +1,11 @@
-<div class="container" id="campaign-index">
+<div class="container">
   <div class="row">
-    <%= link_to 'Back', tasks_path, class: 'btn btn-warning btn-back link-color' %>
     <%= label_tag :title, t('.new_task'), class: 'title' %>
-  </div>
-  <hr />
-  <%= form_for @task, url: tasks_path do |f| %>
-    <%= render partial: 'form', locals: { f: f } %>
-    <div class="footer-div">
+    <hr />
+    <%= form_for @task, url: tasks_path do |f| %>
+      <%= render partial: 'form', locals: { f: f } %>
       <%= f.submit 'Register', class: 'btn btn-info', style: 'font-size: 16px; float: right;' %>
-    </div>
-  <% end %>
+    <% end %>
+    <%= button_to 'Back', tasks_path, method: :get, class: 'btn btn-warning btn-back link-color' %>
+  </div>
 </div>

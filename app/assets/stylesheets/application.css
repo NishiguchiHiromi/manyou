@@ -13,10 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ .menu{
+   font-size: 25px;
+   text-align: right;
+ }
+
+.menu a{
+  margin-right: 8px;
+  padding: 2px;
+  border:2px solid;
+  color: black;
+  border-color:#aaaaaa #444444 #444444 #aaaaaa;
+}
+
 table{
-  border-spacing : 30px 4px;
+  border-spacing: 30px 4px;
+}
+
+tr{
+  /*border-bottom: 3px;*/
 }
 
 .search, .button_to{
   display: inline-block;
+}
+
+.pagination{
+  margin-left: 200px;
 }

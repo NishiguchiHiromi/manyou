@@ -1,0 +1,7 @@
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :label_name %>
+  </div>
+
+  <%= f.hidden_field :task_id, value: @task_id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>

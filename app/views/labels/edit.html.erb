@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <%= label_tag :title, t('.edit_label'), class: 'title' %>
+    <hr />
+    <%= form_for @label, url: labels_path(@label) do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+      <%= f.submit 'Register', class: 'btn btn-info', style: 'font-size: 16px; float: right;' %>
+    <% end %>
+    <%= button_to 'Back', tasks_path, method: :get, class: 'btn btn-warning btn-back link-color' %>
+    <%= button_to 'Delete', label_path, method: :delete, class: 'btn btn-warning btn-back link-color' %>
+  </div>
+  <br><br>
+  ==Present Labels==<br>
+  <% @labels.each do |l| %>
+    <%= l.name %><br>
+  <% end %>
+  ==Present Labels==
+
+</div>

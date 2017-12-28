@@ -27,6 +27,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    if User.admin.count == 1 && @user.admin?
+      return redirect_to tasks_path
+    end
     session[:user_id] = nil
     @user.tasks.destroy_all
     @user.destroy

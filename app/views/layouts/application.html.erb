@@ -9,17 +9,19 @@
   </head>
 
   <body>
-    <%= session.to_hash %><br>
-    <%= params[:status] %><br>
-    <% if login? %>
-      <%= link_to "Edit Profile", edit_user_path(id: current_user.id) %>
-      <%= link_to "Delete Account", user_path(id: current_user.id), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, class: 'btn btn-danger btn-new link-color' %>
-      <%= link_to "Sign Out", session_path(id: current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "Login", new_session_path %>
-      <%= link_to "Sign Up", new_user_path %>
-    <% end %>
-
+      <div class="menu">
+        <% if login? %>
+        <%= link_to "Edit Profile", edit_user_path(id: current_user.id) %>
+          <%= link_to "Sign Out", session_path(id: current_user.id), method: :delete %>
+          <%= link_to "Delete Account", user_path(id: current_user.id), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, class: 'btn btn-danger btn-new link-color' %>
+          <% if current_user.admin? %>
+            <%= link_to "Admin", admin_users_path %>
+          <% end %>
+        <% else %>
+          <%= link_to "Login", new_session_path %>
+          <%= link_to "Sign Up", new_user_path %>
+        <% end %>
+      </div><br>
 
 
     <hr>

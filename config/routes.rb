@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :labels
 
 
   resources :tasks
   resources :users
   resources :sessions
+
+  namespace :admin do
+    resources :users
+  end
 end
