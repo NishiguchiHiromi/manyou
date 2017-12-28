@@ -11,8 +11,8 @@
   </div>
   <br><br>
   ==Present Labels==<br>
-  <% @labels.each do |l| %>
-    <%= l.name %><br>
+  <% @labels.pluck(:name).uniq.sort.each do |l| %>
+    <%= l %><br>
   <% end %>
   ==Present Labels==
 
