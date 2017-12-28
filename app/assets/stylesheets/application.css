@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+table{
+  border-spacing : 30px 4px;
+}
+
+.search, .button_to{
+  display: inline-block;
+}

@@ -1,0 +1,17 @@
+  <%= form_tag sessions_path, method: 'post' do %>
+  <div>
+    <div>
+      <table>
+        <tr>
+          <td><%= label_tag :email, t('.email') %></td>
+          <td><%= text_field_tag :email  %></td>
+        </tr>
+        <tr>
+          <td><%= label_tag :password, t('.password') %></td>
+          <td><%= text_field_tag :password  %></td>
+        </tr>
+      </table>
+    </div>
+    <%= submit_tag 'Login', style: 'font-size: 16px; float: right;' %>
+  </div>
+  <% end %>

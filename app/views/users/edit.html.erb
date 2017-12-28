@@ -1,0 +1,7 @@
+<h1>Edit Profile</h1>
+</div>
+  <%= form_for @user, url: user_path(@user), method: :put do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+      <%= f.submit 'Register', style: 'font-size: 16px; float: right;' %>
+  <% end %>
+  </div>

@@ -13,10 +13,15 @@
         <td><%= f.select :status, Task.statuses.keys%></td>
       </tr>
       <tr>
+        <td><%= f.label :priority, t('.priority') %></td>
+        <td><%= f.number_field :priority %></td>
+      </tr>
+      <tr>
         <td><%= f.label :deadline, t('.deadline') %></td>
         <td>
           <%= f.datetime_select :deadline, {}, class: 'form-control' %>
         </td>
       </tr>
+      <%= f.hidden_field :user_id, value: current_user.id %>
     </table>
   </div>
